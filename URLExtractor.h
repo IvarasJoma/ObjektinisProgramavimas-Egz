@@ -6,8 +6,8 @@
 #include <vector>
 
 std::set<std::string> loadTLDs(const std::string& tldFile);
-bool isValidTLD(const std::string& tld, const std::set<std::string>& tlds);
-void extractURLs(const std::string& inputFile, const std::set<std::string>& tlds, std::vector<std::string>& urls);
-void writeURLOutput(const std::vector<std::string>& urls, const std::string& outputFile);
+void extractURLs(const std::vector<std::string>& lines, const std::set<std::string>& tlds, std::set<std::string>& urls);
+void writeURLOutput(const std::set<std::string>& urls, const std::string& outputFile);
+bool isURL(const std::string& token, const std::set<std::string>& tlds);
 
 #endif
